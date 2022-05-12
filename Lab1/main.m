@@ -12,6 +12,8 @@ NSString *getUserInput(NSString *prompt) {
   
   NSLog(@"%@", prompt);
   fgets(inputChars, 255, stdin);
+  
+  // [NSString stringWithCString:inputChars encoding:NSUTF8StringEncoding];
   NSString *str = [NSString stringWithUTF8String:inputChars];
   return [str stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
 }
